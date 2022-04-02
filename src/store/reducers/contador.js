@@ -15,13 +15,13 @@ const reducerContador = (state = stateInicial, action) => {
     case 'adicionar':
       return {
         ...state,
-        counter: state.counter + 1,
+        contador: state.contador + 1,
         clicks: state.clicks + 1
       };
     case 'subtrair':
       return {
         ...state,
-        counter: state.counter - 1,
+        contador: state.contador - 1,
         clicks: state.clicks + 1
       };
     default:
