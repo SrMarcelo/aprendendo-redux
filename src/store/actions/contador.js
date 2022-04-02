@@ -9,3 +9,8 @@ export const adicionarContador = () => ({
 export const subtrairContador = () => ({
   type: 'subtrair'
 });
+
+export const digitarValorContador = (payload) => ({
+  type: 'digitarValor',
+  payload: payload
+});

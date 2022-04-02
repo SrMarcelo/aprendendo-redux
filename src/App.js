@@ -18,6 +18,12 @@ function App() {
     dispatch(actionsContador.subtrairContador());
   };
 
+  const digitarValorHandler = (event) => {
+    dispatch(
+      actionsContador.digitarValorContador(parseInt(event.target.value))
+    );
+  };
+
   const stateContador = useSelector((state) => {
     return state;
   });
@@ -31,7 +37,15 @@ function App() {
       <h1>Contador</h1>
       <div>
         {stateContador.ativado ? (
-          <p className={classes.valor}>{stateContador.contador}</p>
+          <div>
+            <input
+              className={classes.valor}
+              type="number"
+              value={stateContador.contador}
+              onChange={digitarValorHandler}
+            />
+            {/* <p className={classes.valor}>{stateContador.contador}</p> */}
+          </div>
         ) : (
           <p>Ative o contador</p>
         )}

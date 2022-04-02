@@ -14,9 +14,15 @@
 }
 
 .valor {
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #999999;
     font-size: 2.5rem;
     margin: 2rem 0;
     font-weight: bold;
+    text-align: center;
+    height: 5rem;
+    width: 20rem;
 }
 
 .contador button{
