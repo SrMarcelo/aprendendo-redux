@@ -1,17 +1,19 @@
+import classes from './contador.module.css';
+
 function App() {
   return (
-    <div>
+    <main className={classes.contador}>
       <h1>Contador</h1>
       <div>
-        <p>0</p>
+        <p className={classes.valor}>0</p>
         <p>Ative o contador</p>
       </div>
       <div>
-        <button>+</button>
+        <button className={classes.botao}>+</button>
         <button>-</button>
         <button>Ativar</button>
       </div>
-    </div>
+    </main>
   );
 }
 
