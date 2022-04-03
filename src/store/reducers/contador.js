@@ -27,7 +27,7 @@ const reducerContador = (state = stateInicial, action) => {
     case 'digitarValor':
       return {
         ...state,
-        contador: action.payload,
+        contador: action.payload.valor,
         clicks: state.clicks + 1
       };
     default:

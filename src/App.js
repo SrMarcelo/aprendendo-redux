@@ -20,7 +20,9 @@ function App() {
 
   const digitarValorHandler = (event) => {
     dispatch(
-      actionsContador.digitarValorContador(parseInt(event.target.value))
+      actionsContador.digitarValorContador({
+        valor: parseInt(event.target.value)
+      })
     );
   };
 
