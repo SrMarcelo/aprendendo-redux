@@ -1,26 +1,26 @@
 import classes from './contador.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import * as actionsContador from './store/actions/contador';
 import { useEffect } from 'react';
+import { actionsContador } from './store/reducers/contador';
 
 function App() {
   const dispatch = useDispatch();
 
   const ativarContadorHandler = () => {
-    dispatch(actionsContador.ativarContador());
+    dispatch(actionsContador.ativar());
   };
 
   const adicionarContadorHandler = () => {
-    dispatch(actionsContador.adicionarContador());
+    dispatch(actionsContador.adicionar());
   };
 
   const subtrairContadorHandler = () => {
-    dispatch(actionsContador.subtrairContador());
+    dispatch(actionsContador.subtrair());
   };
 
   const digitarValorHandler = (event) => {
     dispatch(
-      actionsContador.digitarValorContador({
+      actionsContador.digitarValor({
         valor: event.target.value !== '' ? parseInt(event.target.value) : 0
       })
     );

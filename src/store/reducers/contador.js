@@ -1,38 +1,33 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 const stateInicial = {
   contador: 0,
   clicks: 0,
   ativado: false
 };
 
-const reducerContador = (state = stateInicial, action) => {
-  switch (action.type) {
-    case 'ativar':
-      return {
-        ...state,
-        clicks: state.clicks + 1,
-        ativado: true
-      };
-    case 'adicionar':
-      return {
-        ...state,
-        contador: state.contador + 1,
-        clicks: state.clicks + 1
-      };
-    case 'subtrair':
-      return {
-        ...state,
-        contador: state.contador - 1,
-        clicks: state.clicks + 1
-      };
-    case 'digitarValor':
-      return {
-        ...state,
-        contador: action.payload.valor,
-        clicks: state.clicks + 1
-      };
-    default:
-      return state;
+const sliceContador = createSlice({
+  name: 'contador',
+  initialState: stateInicial,
+  reducers: {
+    ativar(state) {
+      state.ativado = true;
+      state.clicks += 1;
+    },
+    adicionar(state) {
+      state.contador += 1;
+      state.clicks += 1;
+    },
+    subtrair(state) {
+      state.contador -= 1;
+      state.clicks += 1;
+    },
+    digitarValor(state, action) {
+      state.contador = action.payload.valor;
+    }
   }
-};
+});
 
-export default reducerContador;
+export const actionsContador = sliceContador.actions;
+
+export default sliceContador;
